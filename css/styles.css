@@ -1,0 +1,139 @@
+/* Global settings */
+body {
+    font-family: 'Helvetica Neue', sans-serif;
+    line-height: 1.6;
+    font-size: 16px;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    background: url('../background_image.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+nav {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#navbar__list {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 15px 0;
+}
+
+#navbar__list li {
+    margin: 0 20px;
+    padding: 10px 15px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+    cursor: pointer;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+#navbar__list li:hover {
+    color: #00ccff;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+}
+
+.active {
+    background-color: #00ccff;
+    color: white;
+    border-radius: 5px;
+}
+
+/* Section styling */
+section {
+    padding: 100px 0;
+    margin-top: 50px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent overlay for text readability */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+section h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 10px;
+    position: relative;
+    color: #fff;
+}
+
+/* Underline for section headers */
+section h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: #fff;
+    margin: 10px auto;
+}
+
+/* Paragraph styling */
+section p {
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: justify;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5); /* Background for better readability */
+    border-radius: 5px;
+}
+
+/* scroll-to-top button */
+#scrollToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #00ccff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: none; /* Initially hidden */
+}
+
+#scrollToTop:hover {
+    background-color: #0099cc;
+    transform: translateY(-5px);
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    section {
+        padding: 80px 20px;
+    }
+
+    #navbar__list {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    #navbar__list li {
+        margin: 10px 0;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+}
