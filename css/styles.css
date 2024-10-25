@@ -12,13 +12,18 @@ body {
 
 nav {
     position: fixed;
-    width: 100%;
     top: 0;
-    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    z-index: 999;
-    opacity: 1;
-    transition: opacity 0.5s ease-in-out;
+    z-index: 1000;
+    padding: 10px 0;
+    color: white;
+}
+
+/* Add spacing at the top for the sections to avoid overlap with the navbar */
+main {
+    padding-top: 80px;
 }
 
 #navbar__list {
@@ -26,7 +31,7 @@ nav {
     justify-content: center;
     list-style-type: none;
     margin: 0;
-    padding: 15px 0;
+    padding: 0;
 }
 
 #navbar__list li {
@@ -55,11 +60,11 @@ nav {
 /* Section styling */
 section {
     padding: 100px 0;
-    margin-top: 50px;
     color: white;
-    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent overlay for text readability */
+    background-color: rgba(0, 0, 0, 0.7);
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+    z-index: 0;
 }
 
 section h2 {
@@ -114,26 +119,105 @@ section p {
     transform: translateY(-5px);
 }
 
-/* Responsive styling */
-@media (max-width: 768px) {
+/* Medium screen devices (tablets and small laptops) */
+@media (max-width: 1024px) {
+    main {
+        padding-top: 140px;
+    }
+
     section {
         padding: 80px 20px;
     }
 
-    #navbar__list {
-        flex-direction: column;
-        padding: 20px;
-    }
-
-    #navbar__list li {
-        margin: 10px 0;
-    }
-
     h2 {
-        font-size: 2rem;
+        font-size: 2.2rem;
     }
 
     p {
         font-size: 1rem;
+    }
+
+    #navbar__list {
+        padding: 10px;
+    }
+
+    #navbar__list li {
+        margin: 5px 0;
+        font-size: 1rem;
+        padding: 10px 15px;
+    }
+}
+
+
+/* Ultra-large screens (4K resolution and above) */
+@media (min-width: 1440px) {
+    section {
+        padding: 150px 20px;
+    }
+
+    h2 {
+        font-size: 3.5rem;
+    }
+
+    p {
+        font-size: 1.3rem;
+    }
+
+    #navbar__list li {
+        font-size: 1.5rem;
+    }
+
+    #scrollToTop {
+        width: 60px;
+        height: 60px;
+        font-size: 2rem;
+    }
+}
+
+/* Small screen devices (phones) */
+@media (max-width: 768px) {
+
+    nav {
+        position: relative;
+        display: block;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    main {
+        padding-top: 0;
+    }
+
+    /* Make the navbar items stack vertically */
+    #navbar__list {
+        flex-direction: column;
+        padding: 10px 0;
+    }
+
+    #navbar__list li {
+        width: 100%;
+        margin: 5px 0;
+        text-align: center;
+        font-size: 1.1rem;
+        padding: 15px 0;
+    }
+
+    section {
+        padding: 60px 20px;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    /* Adjust the scroll to top button size */
+    #scrollToTop {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
     }
 }
